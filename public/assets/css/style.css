@@ -1,0 +1,81 @@
+body {
+	background-color: #BDBAB4;
+	font-family: 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
+	font-size: 15px;
+}
+
+#content{
+	display: block;
+	width: 800px;
+	margin: 40px auto 10px;
+	padding: 10px;
+	background-color: #FFFFFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 0 0 14px #123;
+	-webkit-box-shadow: 0 0 14px #123;
+	box-shadow: 0 0 14px #123;
+
+
+}
+h2, p{
+	margin: 0 auto 14px;
+	text-align: center;
+}
+ul{
+	display: block;
+	clear: left;
+	list-style: none;
+	text-align: center;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 0 0 14px #123;
+	-webkit-box-shadow: 0 0 14px #123;
+	box-shadow: 0 0 5px #123;
+}
+li{
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 5px 5px 5px;
+	padding-right: 30px;
+	overflow: hidden;
+}
+li:hover{
+	background-color: #BCD;
+	z-index: 1;
+	box-shadow: 0 0 10PX #789;
+	-moz-box-shadow: 0 0 10PX #789;
+	-webkit-box-shadow: 0 0 10PX #789;
+}
+a{
+	color:: black;
+	text-decoration: none;
+	font-weight: bold;
+	z-index: 1;
+}
+a:visited{
+	color: #000;
+}
+a:link{
+	color: #000;
+}
+.location1{
+	background-color: #FF6766;
+}
+.location2{
+	background-color: #97CE68;
+}
+.location3{
+	background-color: #6BCBCA;
+}
+.location4{
+	background-color: #FF9900;
+}
+
+
+
+
+
