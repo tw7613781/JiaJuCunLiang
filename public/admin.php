@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])){
 }
 
 $page_title = "添加/编辑 物件";
-$css_files = array("style.css","admin.css");
+$css_files = array("style.css","admin.css","jquery-ui.css");
 include_once 'assets/comm/header.inc.php';
 
 $board = new Board($dbo);
@@ -21,5 +21,5 @@ $board = new Board($dbo);
 </div>
 
 <?php
-	include_once 'assets/comm/footer.inc.php';
+	include_once 'assets/comm/footer_jsFunc.inc.php';
 ?>

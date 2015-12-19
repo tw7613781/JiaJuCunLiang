@@ -25,7 +25,7 @@
 				$sql.=" WHERE item_id =:id LIMIT 1";
 			}
 			if(empty($item_id)){
-				$sql.= " ORDER BY item_time DESC";
+				$sql.= " ORDER BY item_location, item_time DESC";
 			}
 			
 
@@ -79,6 +79,13 @@
 
 			$html .= "\n\t<h2>$this->bDate 物件总类：$volumes</h2>";
 
+			$location_numbering = array(
+			0 => "未定",
+			1 => "冰箱上悬柜",
+			2 => "厨房下橱柜",
+			3 => "杂物间"
+			);
+
 			foreach ($items as $item) {
 				# code...\
 				$admin_edit = $this->_adminEntryOptions($item->id);
@@ -88,7 +95,8 @@
 				$html .= "\n\t\t\t<li>$item->volume</li>";
 				$html .= "\n\t\t\t<li>$item->time</li>";
 				$html .= "\n\t\t\t<li>$item->desc</li>";
-				$html .= "\n\t\t\t<li><a href=\"location.php?location_id=$item->location\">存放地点</a></li>";
+				$current_location = $item->location;
+				$html .= "\n\t\t\t<li>$location_numbering[$current_location]</li>";
 				$html .="</ul>";
 				
 			}
@@ -124,6 +132,20 @@
 			else{
 				$item=new Item();
 			}
+
+			$location_numbering = array(
+			0 => "请选择..",
+			1 => "冰箱上悬柜",
+			2 => "厨房下橱柜",
+			3 => "杂物间"
+			);
+			
+			if(is_null($item->location)){
+				$current_location = 0;
+			}
+			else{
+				$current_location = $item->location;
+			}
 			return <<<FORM_MARKUP
 			<form action="assets/inc/process.inc.php" method="post">
 				<fieldset>
@@ -137,7 +159,12 @@
 					<label for="item_desc">物件描述</lable>
 					<textarea name="item_desc" id="item_desc">$item->desc</textarea>
 					<label for="item_location">存放地点</lable>
-					<input type="text" name="item_location" id="item_location" value="$item->location" />
+					<select name="item_location">
+						<option selected="selected" value="$item->location">$location_numbering[$current_location]</option>
+						<option value="1">冰箱上悬柜</option>
+						<option value="2">厨房下橱柜</option>
+						<option value="3">杂物间</option>
+					</select>
 					<input type="hidden" name="item_id" value="$item->id" />
 					<input type="hidden" name="token" value="$_SESSION[token]" />
 					<input type="hidden" name="action" value="item_edit" />

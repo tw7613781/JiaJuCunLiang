@@ -6,7 +6,7 @@
 	$page_title = "家居存粮";
 	$css_files = array('style.css','admin.css');
 
-	include_once 'assets/comm/header_index.inc.php';
+	include_once 'assets/comm/header_js.inc.php';
 ?>
 
 <div id="content">
