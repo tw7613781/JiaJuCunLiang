@@ -6,7 +6,7 @@ legend{
 	font-weight: bold;
 }
 
-input[type=text],input[type=password],label{
+input[type=text],input[type=password],label, select{
 	display: block;
 /*	width: 70%;*/
 	font-weight: bold;
@@ -15,7 +15,7 @@ textarea{
 	width: 99%;
 	height: 200px;
 }
-input[type=text],input[type=password],textarea{
+input[type=text],input[type=password],textarea, select{
 	border: 1px solid #123;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
